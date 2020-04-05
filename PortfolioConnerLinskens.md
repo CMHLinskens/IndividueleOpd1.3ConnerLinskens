@@ -150,8 +150,27 @@ Dit is de code die dat mogelijk maakt. Zo wordt er een FlowPane gereturned met d
 Dit is de popup van de ADD STUDENT knop. De ADD TEACHER knop laat in principe hetzelfde zien, alleen in plaats van StudentID, TeacherID en er is geen Group die je kan kiezen. Wanneer je op SAVE drukt in deze popup zal deze popup sluiten en zal de ComboBox die bij de geselecteerde group hoort, updaten en de nieuwe student of teacher hebben toegevoegd. Deze GUI keuzes zijn naar mijn mening heel overzichtelijk en geven makkelijk aan wat er verwacht wordt van de gebruiker. Ook vind ik het er goed uitzien en is het niet een stomme tabel waar alles er recht toe recht aan in staat.
 
 ## **Reflectie op stelling**
-In het bedrijfsleven wordt gebruik gemaakt van JavaFX.
+*In het bedrijfsleven wordt gebruik gemaakt van JavaFX.*
 
+JavaFX is een software platform for het ontwikkelen van desktop applicaties, die op allerlei systemen kunnen draaien. JavaFX eerste release was op december 4 2008. JavaFX is gemaakt om de toen al bestaande Swing te vervangen, als de standaard GUI library voor Standard Edition van Java. Het is sinds die tijd, nog steeds de standaard voor de GUI library. De huidige laatste stable release is op maart 14 2020. In het begin, begon JavaFX als een aparte scripting language maar dit is daarna veranderd en kan je JavaFX gewoon gebruiken met Java.
 
+JavaFX is misschien wel een van de beste libraries voor het bouwen van gebruikersvriendelijke applicaties die op Windows maar ook op Mac OS X en Linux kunnen draaien. Waarom JavaFX over ADF of APEX? JavaFX is de standaard Java API waarmee makkelijk verschillende user interfaces gemaakt kunnen worden. Ook heeft JavaFX niet veel nodig om te draaien, hierdoor kan JavaFX dus op veel verschillende plekken draaien waaronder zelfs een raspberry PI. 
+
+JavaFX kan gebruikt worden voor allerlei diverse opdrachten. Zo kan JavaFX gebruikt worden voor doelen zoals: grafieken, tabellen, 3D-figuren en animaties, voortgangsbalkjes, etc. Dit maakt JavaFX een heel efficiënt en robuuste manier van het maken van grafische onderdelen. Er zijn ook een hoop hulp middelen gebouwd, die het maken van user interfaces nog makkelijker maken. Deze voordelen maken werken met JavaFX heel aantrekkelijk. Daarom wordt JavaFX nog steeds gebruikt in allerlei diverse projecten in het bedrijfsleven. 
+
+Dus JavaFX is in de al sinds 2008 de standaard geworden in de Java Standard Edition, voor de library voor de GUI. JavaFX is een heel efficiënt en robuuste manier van werken door de diverse mogelijkheden die je hebt voor het maken van grafische elemeten. JavaFX heeft niet veel nodig om te draaien en kan dus ook draaien op bijvoorbeeld een Raspberry PI. Als laatst is JavaFX te gebruiken met Java waardoor het een zeer makkelijke manier van werken is. Door all deze voordelen is JavaFX nog steeds de standaard en wordt het nog veel gebruikt door veel bedrijven. 
+
+*Bronvermelding*
+- JavaFX is growing... (2015, 11 augustus). Geraadpleegd op 5 april 2020, van https://www.transfer-solutions.com/javafx-is-growing/
+- Wikipedia contributors. (2020, 27 maart). JavaFX. Geraadpleegd op 5 april 2020, van https://en.wikipedia.org/wiki/JavaFX
+
+## **Lijst met applicaties die gebruik maken van JSON**
+-   Twitter
+-   Facebook
+-   Google Maps
+-   Github
+-   MySQL
+
+JSON is een notatie voor objecten in de syntax van JavaScript. Het is een afgesproken standaard om bepaalde objecten op te slaan en uit te lezen. JSON wordt vooral veel gebruikt bij diverse websites die dynamische elementen gebruiken. JSON is dan wel in de syntax geschreven van JavaScript echter betekent dit niet dat JSON taal afhankelijk is. Helaas heeft JSON geen andere schema gerelateerde functies zoals die wel te vinden zijn in bijvoorbeeld XML. Wat JSON zo populair maakt is dat het een overzichtelijke tekst based manier van noteren heeft. Zo is het makkelijk te ontleden en verreist het geen extra code. JSON is dus een snelle manier van het uitwisselen van gegevens. Dit is dus de reden waarom het gebruikt wordt bij zulke grote websites en applicaties die heel snel moeten kunnen draaien.
 
 
