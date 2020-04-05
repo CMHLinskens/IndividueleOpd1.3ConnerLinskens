@@ -18,44 +18,44 @@ Deze lesweek hebben we les gehad in het werken met ObjectIO. Het plan was dan om
 Deze lesweek hiervoor hebben goede uitleg gekregen over ObjectIO. Hierdoor hebben wij dus onze data systeem kunnen toepassen. Ik ging aan de slag met het opzetten van de data klassen. Zo is er een "hoofd" klasse waar al onze data uiteindelijk inkomt. Dit maakt het makkelijk om zo data op te slaan. Want dan hoef je maar naar één klasse te kijken, daar alles uithalen en dit allemaal opschrijven op één save file doormiddel van ObjectIO. Sjoerd had het idee om een "enum singleton" te maken voor de SavedData klasse. Ik had hier persoonlijk nog nooit van gehoord, dit zit ook niet tussen de lesstof die we hebben gehad. Ik had het opgezocht en het zag er makkelijk uit en het kwam met veel voordelen voor wat wij wouden doen.
 
 
-public enum SavedData {
+    public enum SavedData {
 
-    INSTANCE;
+        INSTANCE;
 
-    private ArrayList<StudentData> studentData = new ArrayList<StudentData>();
-    private ArrayList<TeacherData> teacherData = new ArrayList<TeacherData>();
-    private ArrayList<LessonData> lessonData = new ArrayList<LessonData>();
-    private ArrayList<GroupData> groupData = new ArrayList<GroupData>();
+        private ArrayList<StudentData> studentData = new ArrayList<StudentData>();
+        private ArrayList<TeacherData> teacherData = new ArrayList<TeacherData>();
+        private ArrayList<LessonData> lessonData = new ArrayList<LessonData>();
+        private ArrayList<GroupData> groupData = new ArrayList<GroupData>();
 
-    // Getters and Setters
-    public ArrayList<StudentData> getStudentData() {
-        return studentData;
-    }
-    public void setStudentData(ArrayList<StudentData> studentData) {
-        this.studentData = studentData;
-    }
+        // Getters and Setters
+        public ArrayList<StudentData> getStudentData() {
+            return studentData;
+        }
+        public void setStudentData(ArrayList<StudentData> studentData) {
+            this.studentData = studentData;
+        }
 
-    public ArrayList<TeacherData> getTeacherData() {
-        return teacherData;
-    }
-    public void setTeacherData(ArrayList<TeacherData> teacherData) {
-        this.teacherData = teacherData;
-    }
+        public ArrayList<TeacherData> getTeacherData() {
+            return teacherData;
+        }
+        public void setTeacherData(ArrayList<TeacherData> teacherData) {
+            this.teacherData = teacherData;
+        }
 
-    public ArrayList<LessonData> getLessonData() {
-        return lessonData;
-    }
-    public void setLessonData(ArrayList<LessonData> lessonData) {
-        this.lessonData = lessonData;
-    }
+        public ArrayList<LessonData> getLessonData() {
+            return lessonData;
+        }
+        public void setLessonData(ArrayList<LessonData> lessonData) {
+            this.lessonData = lessonData;
+        }
 
-    public ArrayList<GroupData> getGroupData() {
+        public ArrayList<GroupData> getGroupData() {
         return groupData;
+        }
+        public void setGroupData(ArrayList<GroupData> groupData) {
+            this.groupData = groupData;
+        }
     }
-    public void setGroupData(ArrayList<GroupData> groupData) {
-        this.groupData = groupData;
-    }
-}
 
 Dit is hoe de code van de SavedData klasse eruit zit. De klasse is dus gevuld met ArrayLists die de aparte data van de student, teacher, lesson en group bijhouden. Deze zijn dan weer gevult met variabelen zoals: name, age, Gender, etc. 
 
@@ -76,6 +76,46 @@ Deze week gingen we vooral nadenken over hoe het AI systeem gaat werken in onze 
 De camera was nog niet helemaal in orde. Ik ging dus kijken of dat ik deze kon verbeteren. Heb hier even de tijd voor genomen en heb na veel inspiratie van de opdrachten van de 2DGraphics lessen, iets gemaakt. De nieuwe camera werkte perfect alleen zag dat als je de camera versleept, het beeld heel even soms vast liep. Blijkbaar moest werden alle plaatjes van de map apart getekent. Dit koste dus veel process power. Iemand is hier later nog naar gaan kijken en heeft dit kunnen oplossen. De camera lijkt in principe heel veel op die van de Angry Birds opdracht van 2DGraphics. Ik heb hem alleen aangepast zo dat hij goed werkt samen met de al bestaande code. 
 
 ## **Lesweek 7**
+### *Reflectie proces*
+We naderen al het einde van de periode en dus het einde van de proftaak. Sprites voor de NPC's waren al gevonden, ze moesten alleen nog getekent worden en kunnen bewegen. Ook moest de pathfinding van de NPC's gemaakt worden. Voor de rest moest er nog wat opgeruimt worden en wat comments toegevoegd worden. Vooral zat er veel werk in het goed maken van de pathfinding. Alweer hadden we het idee dat het werk niet goed verdeeld kon worden aangezien het maken van de pathfinding een nogal groot onderwerp is. Voor de rest ging de samenwerking goed net zoals altijd.
 
+### *Reflectie vakinhoudelijk*
+Ik ging aan de slag met maken van de NPC's dit deed ik samen met Teun. Hij ging meer het gedeelte doen van het tekenen van de NPC's en ik ging werken aan het bewegen van de NPC's. Eerst heb ik gekeken naar de movement die Johan van de opstart collega had vrij gemaakt. Hier werd echter gebruik gemaakt van een variabel "angle". Dit gaf de bewegende NPC's de mogelijkheid om een vrije rotatie te hebben. Voor onze simulatie willen wij dat de rotatie vast blijft. Daarom hebben ervoor gezorgt dat de gebruik maakt van andere sprites om zo aan te geven welke kant deze opkijkt. Ik moest dus een andere manier vinden om de movement te laten werken.   
+
+    protected boolean moveTo(double deltaTime, Point2D target) {
+        int moveDirectionX, moveDirectionY;
+        if((int)target.getX() - (int)position.getX() < 0) {
+            moveDirectionX = -1;
+            direction = Direction.LEFT;
+        } else if((int)target.getX() - (int)position.getX() > 0) {
+            moveDirectionX = 1;
+            direction = Direction.RIGHT;
+        } else {
+            moveDirectionX = 0;
+        }
+
+        if((int)target.getY() - (int)position.getY() < 0) {
+            moveDirectionY = -1;
+            direction = Direction.UP;
+        } else if ((int)target.getY() - (int)position.getY() > 0) {
+            moveDirectionY = 1;
+            direction = Direction.DOWN;
+        } else {
+            moveDirectionY = 0;
+        }
+
+        if(moveDirectionX != 0 && moveDirectionY != 0) this.speed = diagonalSpeed;
+        else this.speed = straightspeed;
+
+        position.setLocation(position.getX() + moveDirectionX * deltaTime * speed, position.getY() + moveDirectionY * deltaTime * speed);
+
+        if(target.getX() - position.getX() < 10 && target.getX() - position.getX() > -10 &&
+            target.getY() - position.getY() < 10 && target.getY() - position.getY() > -10){
+            return true;
+        }
+        return false;
+    }
+
+Dit is uiteindelijk de code waar ik op uit kwam. In principe is het een heel makkelijk stukje code. Ik bepaal wat de kant is waarop de NPC wilt lopen, door de target positie min de huidige positie te doen. Ik wil echter wil dat dit alleen de richting aan geeft dus wil ik het limiteren tot 1 of -1. Als ik dat niet zou doen dan gaat de NPC dus sneller hoe verder hij van de afstand is. Hierna check ik nog of dat de NPC schuin loopt. Als dit het geval is wil ik de snelheid slomer zetten (halveren). Anders zou de NPC 2x zo snel lopen wanneer hij schuin gaat. Daarna is het een kwestie van de locatie veranderen op basis van de deltaTime, zodat er geen verschil in zit wanneer je de simulatie sneller of slomer draait. Als allerlaatst wil ik nog checken of dat de NPC zijn target heeft bereikt zo ja dan return ik met een true om aan te geven dat hij zijn target heeft bereikt en anders return ik met een false, om het tegenovergestelde aan te geven.
 
 ## **Lesweek 8**
