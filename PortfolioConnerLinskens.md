@@ -7,7 +7,7 @@ Sjoerd kwam in week 1 met het voorstel om zijn framework te gaan gebruiken we vo
 
 ### *Reflectie vakinhoudelijk*
 Het is de eerste lesweek van de proftaak waar er echt code geschreven moet worden. De eerste lesweek bestond voornamelijk op het opstellen van het plan van aanpak en jezelf orienteren op de opdracht die de volgende weken gemaakt moet worden. We hebben dus ook in week 1 een klassendiagram, die breedt het idee geeft van wat er gemaakt moet worden gemaakt.
-![](images/klassendiagram.jpg)
+![Klassendiagram](images/klassendiagram.jpg)
 Ik had de taak gekregen om dus deze klassendiagram te brengen naar het project. Ook moest ik meteen de variabelen erbij gaan schrijven en dus gaan denken over wat wat nodig heeft. Het was nog niet heel belangrijk of dat alles precies had wat de klasse nodig had. Aangezien we de data toch wouden gaan scheiden van de simulatie klassen. Dus heb ik bij elke klasse wat variabelen erbij gedaan die heel logisch zijn. Bijvoorbeeld: bij Person een naam en een leeftijd, bij Room een kamernummer, etc. Uiteraard heb ik bij deze klassen dan ook getters en setters erbij geschreven. Ook wat zoek en verwijder functies voor klassen die een ArrayList bezitten. De reden waarom we niet meteen de klassen hebben geschreven volgens ons idee, is omdat ik nog niet veel wist over de nieuwe stof en dus een soort basis klassen systeem had gemaakt. De rest was bezig met het maken van een begin van de agenda. Aangezien we net 1 week 2DGraphics hadden gedaan moesten veel mensen heirna kijken om al stof te begrijpen die we nogniet hadden gehad. Later nadat het begin van de agenda was afgerond en er iets getekent kon worden, heb ik de code goed doorgekeken om het te begrijpen. Had zag er nog wat rommelig uit dus dit moest later nog opgeruimt worden.
 
 ## **Lesweek 3**
@@ -118,4 +118,40 @@ Ik ging aan de slag met maken van de NPC's dit deed ik samen met Teun. Hij ging 
 
 Dit is uiteindelijk de code waar ik op uit kwam. In principe is het een heel makkelijk stukje code. Ik bepaal wat de kant is waarop de NPC wilt lopen, door de target positie min de huidige positie te doen. Ik wil echter wil dat dit alleen de richting aan geeft dus wil ik het limiteren tot 1 of -1. Als ik dat niet zou doen dan gaat de NPC dus sneller hoe verder hij van de afstand is. Hierna check ik nog of dat de NPC schuin loopt. Als dit het geval is wil ik de snelheid slomer zetten (halveren). Anders zou de NPC 2x zo snel lopen wanneer hij schuin gaat. Daarna is het een kwestie van de locatie veranderen op basis van de deltaTime, zodat er geen verschil in zit wanneer je de simulatie sneller of slomer draait. Als allerlaatst wil ik nog checken of dat de NPC zijn target heeft bereikt zo ja dan return ik met een true om aan te geven dat hij zijn target heeft bereikt en anders return ik met een false, om het tegenovergestelde aan te geven.
 
-## **Lesweek 8**
+## **Lesweek 8(+9)**
+### *Reflectie proces*
+Het einde is al in zicht en er moeten nog een aantal dingen gedaan worden. Ook is het extra nadelig aangezien we niet meer naar school kunnen om te werken aan het project. Alles zal dus nu vanaf thuis afgesproken moeten worden en uitgevoerd worden. Lars had een lijst afgesteld met dingen die we nog afgerond moeten worden. Zo was het duidelijk wat er dus nog allemaal afgerond of gemaakt moest worden. in week 4 moesten we stoppen met het werken aan de agenda. Echter hebben we wel oranje licht gekregen bij de demo van de agenda. Er moesten dus nog een aantal dingen aangepast worden en gemaakt worden. Hier mochten we dus alleen verder aan werken wanneer je al ver bent met de simulatie. Dit is uiteraard om te voorkomen dat je dadelijk geen tijd meer hebt voor de simulatie want dat is nou net waar het om gaat. Hiernaast waren er nog een aantal andere opdrachten die gedaan moesten worden die hebben de andere projectleden uitgevoerd. 
+
+### *Reflectie vakinhoudelijk*
+Mijn taak was dus om de agenda te verbeteren en om dingen eraan toe te voegen. Voornamelijk hadik het idee om een People Manager toe te voegen. Met het idee dat je studenten en docenten makkelijk kan verwijderen en toevoegen. Op papier had ik een schets gemaakt, die het idee gaf, hoe het eruit moet zien. 
+
+![People Manager](images/peoplemanager.png)
+
+Dit is uiteindelijk waar ik op uit kwam. Je kan makkelijk bij elke groep een student of docent selecteren en deze verwijderen door op de bijbehorende Delete knop te drukken. Een student of docent toevoegen gaat ook heel makkelijk door op de bovenstaande knoppen te drukken. Wanneer je op ADD STUDENT of ADD TEACHER drukt zal er nog een popup tevoorschijn komen waar je de gegevens invult. Wanneer je op Delete zou drukken en je hebt in de ComboBox een student of teacher geselecteerd, zal deze verwijderd worden uit de SavedData en wordt de ComboBox geupdate. Ook heb ik functies geschreven die duplicate code zo veel mogelijk weg halen. Zo is er een functie die een ComboBox maakt met daarnaast een delete knop. Die delete knop is dan ook meteen verbonden aan de ComboBox. Zo hoef ik niet 6 keer hetzelfde uit te schrijven.
+
+    private FlowPane buildGroupRow(GroupData groupData){
+        FlowPane flowPane = new FlowPane();
+        ComboBox<String> group = new ComboBox<>();
+        groupBoxes.add(group);
+        updateGroupBox(group, groupData);
+        group.setMaxWidth(125);
+        group.setPrefWidth(125);
+        flowPane.getChildren().add(group);
+        Button deleteButton = new Button("Delete");
+        deleteButton.setOnAction(event -> {removeStudentFromData(group.getValue()); updateGroupBox(group, groupData);});
+        flowPane.getChildren().add(deleteButton);
+        return flowPane;
+    }
+
+Dit is de code die dat mogelijk maakt. Zo wordt er een FlowPane gereturned met daarin de aangemaakt de ComboBox en de gelinkte delete knop. Om de ComboBoxes niet zich te laten aanpassen aan de grootte van de Strings die zich bevinden in de ComboBox. Zet ik de prefWidth en de maxWidth gelijk aan 125. Deze funcie kon echter niet gebruikt worden voor de Teachers ComboBox aangezien een Teacher niet in een Group zit. 
+
+![Add Student](images/addstudent.png)
+
+Dit is de popup van de ADD STUDENT knop. De ADD TEACHER knop laat in principe hetzelfde zien, alleen in plaats van StudentID, TeacherID en er is geen Group die je kan kiezen. Wanneer je op SAVE drukt in deze popup zal deze popup sluiten en zal de ComboBox die bij de geselecteerde group hoort, updaten en de nieuwe student of teacher hebben toegevoegd. Deze GUI keuzes zijn naar mijn mening heel overzichtelijk en geven makkelijk aan wat er verwacht wordt van de gebruiker. Ook vind ik het er goed uitzien en is het niet een stomme tabel waar alles er recht toe recht aan in staat.
+
+## **Reflectie op stelling**
+In het bedrijfsleven wordt gebruik gemaakt van JavaFX.
+
+
+
+
