@@ -60,3 +60,22 @@ public enum SavedData {
 Dit is hoe de code van de SavedData klasse eruit zit. De klasse is dus gevuld met ArrayLists die de aparte data van de student, teacher, lesson en group bijhouden. Deze zijn dan weer gevult met variabelen zoals: name, age, Gender, etc. 
 
 Door zo een enum te maken met één "optie" erin kan je deze makkelijk overal aanroepen en krijg je toegang tot deze ArrayLists. Het grootste voordeel hiervan is dat hier maar één instantie van kan zijn. Zo kan er nooit een tweede SavedData enum gemaakt worden. En creeëren wij dus één plek waar alle data samen komt. Om deze data te bereiken kan je dus overal SavedData.INSTANCE schrijven en krijg je toegang tot all deze getters en setters van de data.
+
+## **Lesweek 5**
+### *Reflectie proces*
+Deze week is er niet veel gedaan. Dit komt door het feit dat het framework dilemma weer naar boven is gekomen. In een vergadering met de tutor, heeft Timo duidelijk gemaakt dat hij nog steeds niet eens is over het gebruik van het framework van Sjoerd. We hebben dan ook een gesprek ingepland met Maurice om dit dilemma op te lossen. Zo hebben we 2 uren gepraat over wat wij nou eigenlijk wilde bereiken met deze proftaak. Tijdens dit gesprek kwam Maurice erachter dat het eigenlijk vooral ging om tussen een "strijd" tussen Sjoerd en Timo. Timo had het idee dat wat er in het framework gebeurde niet veel voordeel had tot geen voordeel had voor de proftaak en wilde alles vanaf niks zelf opbouwen. Maurice zei dat als je dat doet dat je dan uiteindelijk komt op het framework van Sjoerd. Wij vermelden ook dat het nu te laat zou zijn voor het niet gebruiken van het framework aangezien we al in week 5 zitten van de periode. Maurice heeft Sjoerd dan oko de opdracht te geven om samen met Timo aan iets te werken in de proftaak dat betrekking heeft tot het framework. Zo kan Timo vragen stellen over eventuele verwarringen en kunnen we toch gebruik maken en verder gaan met het voorgestelde framework van Sjoerd.
+
+### *Reflectie vakinhoudelijk*
+Zoals ik zei, is er niet veel gewerkt aan de proftaak aangezien het dilemma met het framework. Dus heb ik voornamelijk een klein beetje code op zitten ruimen en want comments toegevoegd aan bestaande code om het te verduidelijken. Volgende week zullen we het weer oppakken en verder gaan met waar we gebleven waren.
+
+## **Lesweek 6**
+### *Reflectie proces*
+Deze week gingen we vooral nadenken over hoe het AI systeem gaat werken in onze simulatie. Sjoerd had ins snel ingeligt over zijn idee over hoe het AI zou moeten werken. Dit vonden we allemaal wel een goed idee en gingen er mee akkoord. Ook was de camera nog niet helemaal in orde van de simulatie. Voor de rest was er niet veel anders te doen. Wij kregen vaker dit idee bij deze proftaak. Vaak waren er paar opdrachten die uitgevoerd moesten worden alleen kon je deze niet opverdelen aan de projectleden. Dus moest er iemand aan de slag met iets en hadden de andere niet veel te doen.
+
+### *Reflectie vakinhoudelijk*
+De camera was nog niet helemaal in orde. Ik ging dus kijken of dat ik deze kon verbeteren. Heb hier even de tijd voor genomen en heb na veel inspiratie van de opdrachten van de 2DGraphics lessen, iets gemaakt. De nieuwe camera werkte perfect alleen zag dat als je de camera versleept, het beeld heel even soms vast liep. Blijkbaar moest werden alle plaatjes van de map apart getekent. Dit koste dus veel process power. Iemand is hier later nog naar gaan kijken en heeft dit kunnen oplossen. De camera lijkt in principe heel veel op die van de Angry Birds opdracht van 2DGraphics. Ik heb hem alleen aangepast zo dat hij goed werkt samen met de al bestaande code. 
+
+## **Lesweek 7**
+
+
+## **Lesweek 8**
